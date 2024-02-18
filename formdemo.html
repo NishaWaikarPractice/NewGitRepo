@@ -3,12 +3,41 @@
         <title>Form Demo</title>
     </head>
     <body>
-        <form>
+        <center>
+        <form action="">
             First Name : <input type="text" name="fname" placeholder="Nisha"/><br/><br/>
             Last Name  : <input type="text" name="lname" value="Nisha"/><br/><br/>
             User Name  : <input type="text" name="uname" /><br/><br/>
             Password   : <input type="password" name="password" /><br/><br/>
             Address    : <textarea rows="5" name="address"></textarea><br/><br/>
+            City       : <select name="city" multiple>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Kolkata">Kolkata</option>
+                         </select>  
+                         <br/>
+                         <br/>
+            Gender     : <input type="radio" name="gender" value="Male">Male</input>
+                         <input type="radio" name="gender" value="Female">Female </input>
+            <br/>
+            <br/>
+            Hobbies    : <br/>
+                    <input type="checkbox" name="hobbies" value="Singing">Singing</input><br/>
+                    <input type="checkbox" name="hobbies" value="Travelling">Travelling</input><br/>
+                    <input type="checkbox" name="hobbies" value="Dancing">Dancing</input><br/>
+                    <input type="checkbox" name="hobbies" value="Eating">Eating</input><br/>
+                    <input type="checkbox" name="hobbies" value="Sleeping">Sleeping</input><br/>
+                    <input type="checkbox" name="hobbies" value="Studying">Studying</input><br/>
+            <br/>
+            <button type="submit">Submit</button>
+                         
+                         
+                         
+                         
+                         
         </form>
+    </center>
     </body>
 </html>
