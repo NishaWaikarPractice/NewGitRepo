@@ -1,0 +1,585 @@
+IF YOU ARE NOT ABLE TO HEAR PLEASE TRY TO REJOIN
+
+Self learning sessions?
+1. Agile
+2. GIT
+
+3. SQL
+
+Designing & Planning
+
+Agile
+	waterfall model- sequential development of application
+	industry trend 
+	technology stack
+	
+Requirement analysis
+System design
+Implementation
+Testing
+Deployment
+Maintenance
+
+Agile is methodology
+Scrum is a tool to implement agile methodology
+
+
+Labs -> Launch Lab -> RDP for Windows
+
+Data
+
+What is data?
+information
+
+limitations of file system to store data
+1. there is no structure to store data
+2. possibility of redundent data
+3. no uniqueness of data
+4. managing data, processing data is difficult
+5. no security, no access control
+6. can not have distributed access
+
+Database
+Data stored in structured manner on computer system
+Can be handled easily
+
+DBMS
+Database Management System helps to perform CRUD operations on the data from database
+C - Create
+R - Retrieve
+U - Update
+D - Delete
+
+Open MySQL console
+type command to create new database
+	create database <DATABASE NAME>;
+	create database newdb;
+
+command to check existing databases :
+		show databases;
+
+Need to connect to required database
+			connect <DATABASE NAME>;
+			use <DATABASE NAME>;
+			Connect newdb;
+			
+			
+Create table in database			
+create table persons(
+	personId INT,
+	FirstName VARCHAR(40),
+	LastName VARCHAR(40),
+	Address VARCHAR(60),
+	City VARCHAR(15)
+);		
+
+To check the tabkes in database
+	show tables;
+
+Add a record in the table : Insert command
+Use insert command to add the record
+	insert command adds a new record in the table
+	INSERT INTO <TABLE NAME> VALUES(VALUE1, VALUE2, VALUE3,....);
+
+
+insert into persons values(1,"Ramlal","Sharma","123 ABC Apartments","Delhi");
+insert into persons values(2,"Shamlal","Verrma","123 XYZ Apartments","Delhi");
+
+Insert multiple records at once
+	insert into persons values
+		(4,"Ramlal","Sharma","123 ABC Apartments","Delhi",34),
+		(5,"Shamlal","Verrma","123 XYZ Apartments","Delhi",45)
+	;
+
+Insert data for specific columns 
+	insert into persons(personId, FirstName, LastName) values(6,"Geeta","Bachchan");
+	
+	insert into persons(personId, FirstName, LastName) values(6,"Geeta","Bachchan"),(7,"Reeta", "Arora");
+
+
+VARCHAR & Date data must be specified in double inverted comma. 
+
+Fetch data from table
+	SELECT * FROM <TABLE NAME>;
+
+Alter command :	
+Add column to existing table
+		ALTER TABLE <TABLE NAME> ADD <COLUMN NAME> <DATA TYPE>;
+		alter table persons add age INT;
+Remove column from existing table
+		ALTER TABLE <TABLE NAME> DROP <COLUMN NAME>;
+		alter table persons drop Citizen;
+
+Update command is used to modify existing records
+			UPDATE <TABLE NAME> SET <COLUMN NAME>=VALUE,....;
+			update persons set age=25 where personId=1;
+
+Delete record
+
+delete all records from a table 
+	delete from <TABLE NAME>;
+	
+delete specific record from a table
+	delete from <TABLE NAME> where CONDITION;
+
+
+Primary Key :
+	1. a single or combination fields
+	2. identifies records in a table uniquely
+	3. cannot be null or empty
+Rules :
+	1. key column must be unique
+	2. each table will have only one primary key
+	3. can not be null or empty 
+	4. duplicate entries with existing primary key value is not allowed
+	5. recommended to use INT or BIGINT data types as primary key column
+
+create table employees(
+	emp_Id INT PRIMARY KEY,
+	emp_name VARCHAR(30),
+	emp_designation VARCHAR(30)
+);
+
+insert into employees values
+	(101, "Radha", "Developer"),
+	(102, "Sham", "Developer"),
+	(103, "Radha", "Tester"),
+	(104, "Sham", "Manager")
+;
+
+Foreign key :
+	a key that is used to link one or more tables together
+	it is also called as referencing key
+	
+	creates a parent child relationship in 2 tables
+	the parent table holds the initial column value and column values of child table will refer the parent table key
+
+	can be createsd 
+		1. create table
+		2. alter table
+
+[CONSTRAINT constraint_name]  
+    FOREIGN KEY [foreign_key_name] (col_name, ...)  
+    REFERENCES parent_tbl_name (col_name,...)  
+	
+	
+Parent Table :
+create table employees(
+	emp_Id INT PRIMARY KEY,
+	emp_name VARCHAR(30),
+	emp_designation VARCHAR(30)
+);
+
+Child table
+create table emp_info(
+	emp_id_fk INT,
+	emp_address varchar(40),
+	emp_contact varchar(40),
+	constraint fk_employees FOREIGN KEY (emp_id_fk)
+	REFERENCES employees(emp_Id)
+);
+
+
+insert into emp_info values(
+	101,"ABC Apart","1234567890"
+);
+insert into emp_info values(
+	101,"PQR Apart","0234567890"
+);
+
+create a table customers with primary key as user id. This holds the information for all users of Amazon.
+create another table as order_info which refers to primary key of customers
+
+Clauses :
+	1. where 
+		can be used with select insert update and delete
+		specifies the condition that must be fulfilled for selected records
+		
+		Specifiying 1 condition
+		select * from employees where emp_id=101;
+
+	AND operator for combining multiple conditions
+		select * from employees where
+		emp_name="Radha"
+		AND
+		emp_designation="Tester"
+		;
+
+	OR operator
+	select * from employees where
+		emp_name="Radha"
+		OR
+		emp_designation="Tester"
+		;
+
+	order by clause
+		while we are retriving the data using select query
+		if we want the records to sort in ascending or descending order
+		 *order does not reflect in original data in the table*
+		
+		Select expressions
+		from tablename
+		where condition
+		order by expression 
+
+	group by clause
+		used to collect data from multiple records & group the result by one or more column
+		generally used with select query
+		
+		select * from table where
+		condition(s)
+		group by expression1, expression2,....;
+
+		count, sum, min, max, avg
+		
+		select emp_designation,count(emp_designation) 
+		from employees 
+		group by emp_designation;
+
+		having clause 
+		 used with group by clause
+		 it always return the records where the condition is true
+		 
+		 select * from table where
+		 condition(s)
+		 group by expression1, expression2,....
+		 having condition;
+		 
+Joins:
+	joins are used in select query
+	used to fetch the data from multiple tables
+	
+	types of joins
+		1. Inner join (simple join)
+		2. Left Outer Join ( Left Join)
+		3. Right Outer join (right join)
+
+1. Inner Join 
+		used to return all rows from multiple tables where join condition is satisfied
+			SELECT columns
+			FROM table1
+			INNER JOIN table2
+			ON table1.column = table2.column;
+
+	SELECT employees.emp_id,employees.emp_name,emp_info.emp_address
+	FROM employees
+	INNER JOIN emp_info
+	ON employees.emp_id = emp_info.emp_id_fk;
++--------+----------+-------------+
+| emp_id | emp_name | emp_address |
++--------+----------+-------------+
+|    101 | Radha    | ABC Apart   |
+|    101 | Radha    | PQR Apart   |
++--------+----------+-------------+
+
+
+2. Left join
+	used to fetch records from multiple tables
+	it retrieves all the records form 1st table even no matching records found in second table
+	if no matches are found from right side table then returns null
+	
+	SELECT columns
+	FROM table1
+	LEFT JOIN table2
+	ON condition;
+
+	SELECT employees.emp_id, employees.emp_name
+	FROM employees
+	LEFT JOIN emp_info
+	ON employees.emp_id = emp_info.emp_id_fk;
+	 emp_Id | emp_name | emp_designation |
++--------+----------+-----------------+
+|    101 | Radha    | Developer       |
+|    101 | Radha    | Developer       |
+|    102 | Sham     | Sr. Dev         |
+|    103 | Radha    | Tester          |
+|    104 | Sham     | Manager         |
+|    105 | Nisha    | Manager         |
+|    106 | Rekha    | Tester          |
++--------+----------+-----------------+
+	
+	
+	
+	
+	SELECT employees.emp_id, employees.emp_name, emp_info.emp_contact
+	FROM employees
+	LEFT JOIN emp_info
+	ON employees.emp_id = emp_info.emp_id_fk;
+
++--------+----------+-------------+
+| emp_id | emp_name | emp_contact |
++--------+----------+-------------+
+|    101 | Radha    | 0234567890  |
+|    101 | Radha    | 1234567890  |
+|    102 | Sham     | NULL        |
+|    103 | Radha    | NULL        |
+|    104 | Sham     | NULL        |
+|    105 | Nisha    | NULL        |
+|    106 | Rekha    | NULL        |
++--------+----------+-------------+
+
+
+3. Right Join
+	used to retrieve data from multiple tables
+	returns all records from right table and those from left table where condition is satisfied
+	if unmatched records in left table it returns null 
+
+
+	Select columns
+	from table 1
+	right join table2
+	on condition;
+
+GIT	
+	Distributed Version Control System
+	developed to manage projects with high speed & efficiency
+	
+	What is GIT?
+		open source distributed version control system
+		designed to handle minor to major projects 
+		allows to track & work together with team members
+		Global Information Tracker
+		GIT has commands to execute
+		foundation to services like GitHub, GitLab
+		
+		
+		features :
+			open source
+			scalable 
+			distributed
+			security 
+			branching & merging
+	
+GIT installation
+
+User configuration using git config command
+git config --global user.name "USERNAME"
+
+git config --global user.email "EMAIL ID"
+
+git config --list : provides the configuration details
+
+git init 
+	very first command that we execute on system
+	used to create a blank repository
+	
+git status 
+		used to check the status of current repository
+		
+git add		
+	git add <filename> adds one file to staging area
+	is used to add file to repository
+	it brings all files to staging area
+	then these will be added to repository when commited
+	to add multiple files to staging area 
+	git add .
+
+git branch 
+	a version of repository that diverges from main brain
+	to create a new branch
+		git branch <branch name>
+	to delete branch	
+		git branch -d <branch name>
+	to switch from master branch
+		git checkout <branch name>
+
+git merge
+	allows to merge other branch with currently active brach
+
+git origin master
+	used in the context of remote repository 
+
+
+HTML
+	Hyper Text Markup Language
+	used to design static web pages
+	how to represent the data
+	files are with .html extension
+	HTML has predefined tags (mark ups)
+	Javascript engine available in each browser
+	it interprets HTML tags and represents the data
+	HTML is interpreted language
+	HTML is not case sensitive
+		<H1></h1>
+		<BoDy></bOdY>
+		This is allowed as no case sensitivity
+		spaces in hTML are omitted
+
+Tag
+	script of HTML
+	tags are with start tag <tag name> & end tag </tag name>
+	types of tags	
+		1. stand alone tags
+				certain tags that dont have start and end tag
+				<br/> <hr/>
+		2. Pair or range tag
+				<html></html>
+				<body></body>
+
+nested tags	
+	when we have any tag inside another tag it is termed as nested tag
+	
+Heading Tags
+		<H1> </H1>
+		.
+		.
+		.
+		.
+		<h6></h6>
+		predefined size & thickness of text
+		every content will appear on next line
+
+Lists are used to arrange the elements 
+types of list	
+	ordered list - ol
+	unordered list - ul
+
+Tags : predeifned have specific meaning interpreted by Javasccript engine
+
+if we need additional parameters / properties to be applied to tags, we can make use of attributes
+every tag has specific attributes
+attributes are always specified in start tag
+
+How to add attribute to a tag
+<TAGNAME AttributeName="VALUE">
+
+Adding images to html page
+<img src="nature.jpeg" alt="Image of Nature" width="300" height="200">
+
+img is the tag used to add image in HTML file
+src is attribute to specify file or image path
+alt is alternate text. displayed if image is not loaded in the browser
+width & height in pixel for image
+
+
+Links in HTML page
+	used to navigate from one page to another
+	it could be navigation to another html page or to external resource like any web page
+	
+	
+	<a href="url" target="">Text</a>
+	
+	the tag used is <a>
+	href specifies destination address stands for Hypertext reference
+	url - address to navigate to
+	Text - will be displayed on the web page for clicking
+	target specifies the end location of refernced document to open
+	_self -> the referenced document will open in same tab 
+	_blank -> the referenced document will open in new tab
+
+Tables in HTML
+	helps to represent data in structured format
+	data will be present in row & column format
+
+	<table>
+		<tr>
+			<th>Heading 1</th>
+			<th>Heading 2</th>
+			<th>Heading 3</th>
+		</tr>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+		</tr>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+		</tr>
+		<tr>
+			<td>data 1</td>
+			<td>data 2</td>
+			<td>data 3</td>
+		</tr>
+	</table>
+
+Forms in HTML
+	form is used to collect data from user
+	form contains form elemnts as textbox, textfield, radio button
+	checkbox
+	button etc
+	
+	input type="text" - single line input field or textfield
+	attributes:
+		type : what type of input control - textfield, radio, checkbox
+		name : used to give name to a control
+		value : inital value in the control 
+		maxlength : specifies maximum number of characters to be entered in the control
+
+
+git remote add origin URL 
+
+
+
+CSS
+Casacading Styale Sheet
+Used to design HTML tags
+
+
+HTML Tag ---> Attributes 
+
+limitations of attributes
+    if multiple tags need to use same attribute value, must be specified independently
+    and repeated for each tag
+    use certain attributes for different tags
+
+    <p>This is some content for <font> HTML</font></P>
+
+it is style sheet language that is used to describe look & formatting of a document
+
+syntax
+
+selector{property : value}
+selector{property1 : value1; property2 : value2};
+
+h1 {color : red}
+P {color : green; font-size : 10 px}
+body 
+
+
+selector : indicates the HTML element to which style should be applied
+declaration block : holds one more more properties and their values to apply 
+                    separated by semicolon
+
+Selectors :
+1. Element Selector :
+    selects the HTML element with specified name
+    the effect is applied to all the elements with the HTML tag name
+    when to use ? when you want to apply same styling to all the elements in the HTML 
+    document
+
+2. ID selector  :
+    selects the HTML element with specified ID
+    when to use ? when the effect to be applied on an unique element
+
+3. Class selector :
+    selects multiple elements with specified class name
+    when to use ? when you need to apply same style to different HTML elements which
+    can not be identified with element name or id
+		
+4. Class selector for specific element :
+    selects the element with combination of tag name and class attribute value
+    when to use ? when multiple HTML elements have same class name however the
+    style to be applied is different
+
+5. Universal selector :
+    the style is applied to all elements in HTML page.
+    when to use ? when you want same style to be applied for all elements 
+    in HTML document    
+
+6. Group selector : 
+    selects all the elements wth same style application
+    when to use ? when you want to apply same style for different 
+    HTML elemets    
+
+how to add css?
+    1. inline css
+            used to apply css on a single line or HTML element
+    2. internal css
+            used to apply style on a single HTML document and defined in the HTML document 
+            using style tag in head section
+    3. external css
+            external css file is included in HTML document
+    
+
