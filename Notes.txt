@@ -513,7 +513,7 @@ git remote add origin URL
 
 
 CSS
-Casacading Styale Sheet
+Casacading Style Sheet
 Used to design HTML tags
 
 
@@ -571,7 +571,11 @@ Selectors :
 6. Group selector : 
     selects all the elements wth same style application
     when to use ? when you want to apply same style for different 
-    HTML elemets    
+    HTML elemets 
+
+7. Descendant selector :
+	specifies two selectors such that the elements matched by second
+	selector are selected	   
 
 how to add css?
     1. inline css
@@ -582,4 +586,13 @@ how to add css?
     3. external css
             external css file is included in HTML document
     
+
+Annimations in CSS
+	used to create animations in html pages
+	@keyframes rule is created. used to control the intermediate
+	steps in CSS animation sequence.
+	@keyframes rule must be bound with selector
+	2 properties :
+		name of animation
+		duration of animation 
 

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>animation demo</title>
+        <style>
+     
+
+            .aBox{
+
+                position: fixed;
+                top:200;
+                transform: rotate(80deg);
+                left:500;
+                background-color: blue;
+
+            }
+            .wave{
+                position: absolute;
+                opacity: .4;
+                width: 500px;
+                height: 300px;
+                margin-left: -150px;
+                margin-top: -250px;
+                border-radius: 73%;
+            }
+            .wave.-one{
+
+                animation: rotate 7000ms infinite linear;
+                opacity: .1;
+                background-color: blue;
+            }
+             .wave.-two{
+
+                animation: rotate 4000ms infinite linear;
+                opacity: .2;
+                background-color:red;
+                text-align: left;
+            }
+            .wave.-three{
+                animation: rotate 8500ms infinite linear;
+                background-color: yellow
+            }
+            @keyframes rotate{
+                    from {transform: rotate(0deg);}
+                    from {transform: rotate(240deg);} 
+
+
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <div>
+
+
+        </div>
+        <div class="aBox">
+            <div class="wave -one">BIRTHDAY</div>
+            <div class="wave -two">BIRTHDAY</div>
+            <div class="wave -three">
+                <h1>Birthday</h1>
+            </div>
+
+        </div>
+    </body>
+</html>
