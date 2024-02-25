@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            var data = 100
+            function add(){
+                // num1, num2 & result are local variables
+                var num1 = 10
+                var num2 = 20
+                var result = num1 + num2
+                document.write(result)
+                document.write("<br/>")
+                document.write("data : " + data +"\n")
+            }
+            function subtract(){
+                // var result = num1 - num2
+                // document.write(result)
+                // document.write("\n")
+                // document.write("data : " + data)
+                // document.write(name) // undefined
+                var date = null // value is set to null
+                const PI = 3.14
+                document.write(PI)
+                PI = 10.5
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="button" value="Add" onclick="add()"/>
+            <input type="button" value="Subtract" onclick="subtract()"/>
+        </form>
+    </body>
+</html>

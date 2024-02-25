@@ -596,3 +596,127 @@ Annimations in CSS
 		name of animation
 		duration of animation 
 
+Javascript :
+	HTML is used to develop static web pages
+	HTML focuses on how to display data
+	if we need dynamic effect in a static HTML page, we can 
+	embed a  script
+	add a row in a table at runtime
+	delete a row from a table at runtime
+	validate an HTML form
+
+	when you need to have dynamic effects in a static web page,
+	can be embedded in HTML
+	lightweight
+	interpreted by browser
+
+	Javascript can be embeded in HTML page easily
+	it is a lightweight, interpreted scripting language
+
+How to add Javascript in HTML?
+	by using <script> 
+
+Where can we add Javascript?
+	1. within body tag
+		the script gets executed at the time of web page loading
+	2. within head tag
+		the script that needs to be executed when required
+	3. as external javascript file
+		by using script tag 
+
+USD - INR 
+1. accept USD value
+2. multiply USD by the current value
+3. display INR value 
+
+10 USD --> INR
+10 * 75
+750 INR
+
+Variables :
+	Javascript variable a name of storage location
+	First Name , Last Name, User Name, Password, salary, age, designation......
+	how to declare a variable in JS?
+		using var keyword
+		var FirstName
+		var LastName
+		var age
+		var salary 
+
+	Rules for variable declaration
+		while declaring a variable following rules must be followed
+			1. name of the variable must start with a letter or an underscore (_) 
+			   or a dollar sign ($). Can not start with number or any other special
+			   characters
+			2. after first letter or _ or $, digits, _, $ can be used   
+			3. variable names are case sensitive. firstName & FIRSTNAME are not same 
+			   variables
+	declare a variable
+		var VARNAME = value
+
+types of variables:
+	1. Local variable
+		if a variable is declared inside a block of code, it is 
+		called as local variable
+		it is declared and used within the block of code and
+		can not be accessed from outside the block
+	2. global variable		
+		if a variable is declared outside all blocks of code, it is 
+		called as global variable
+
+Data types :
+	JS is dynamic type language. you dont specify data type at the time of variable
+	declaration. the data type of a variable is decided dynamically (at runtime) 
+	depending on what data is stored in the variable
+
+	1. Primitive (Basic) data types
+		number - decimal & non decimal
+		boolean - true false
+		string  - alphanumeric data
+		undefined - when a variable is not defined
+		null - variable is defined and its value is set to null
+	2. Non primitive (reference) data types
+		object
+		array
+		regex
+constants in javascript:
+	keyword used is constants
+	const PI = 3.14
+	const INTEREST_RATE = 7.5
+
+Control structure 
+	when we need to decide the flow of program based on certain
+	conditions, we can use control structure
+
+	decision making
+		if
+			if(expression){
+				// code to be executed if expression evaluates to true
+			}
+
+		switch
+			switch(expression){
+				case val1:
+					code
+					break
+				case val2:
+					code
+					break	
+			}
+	loops
+		for
+			for(initialization; condition; increment){
+				code to execute
+			}
+		
+		while 
+			while(condition){
+				code to be executed till condition evaluates to true
+			}
+		
+		do-while 
+			do{
+				code to be executed
+			} while(condition)
+
+		for-in

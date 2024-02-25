@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <h4>Interest on FD</h4>
+        <script>
+            var ageOfAccHolder = 45
+            var interestRate
+
+            if(ageOfAccHolder < 60){
+                interestRate = 7.0
+                document.write("Interest rate is : " + interestRate)
+            } else {
+                interestRate = 7.5
+                document.write("Interest rate is : " + interestRate)
+            }
+
+            if(ageOfAccHolder < 18){
+                document.write("Account holder is minor")
+            } else if(ageOfAccHolder >= 18 & ageOfAccHolder <=60){
+                document.write("Account holder is normal user")
+            } else if(ageOfAccHolder > 60){
+                document.write("Account holder is Sr citizen")
+            }
+
+        </script>
+    </body>
+</html>
