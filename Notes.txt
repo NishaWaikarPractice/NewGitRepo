@@ -720,3 +720,58 @@ Control structure
 			} while(condition)
 
 		for-in
+
+Install Visual Studio code
+	https://code.visualstudio.com/
+
+Install Node JS latest version
+	https://nodejs.org/en/download/current
+
+Objects in Javascript
+
+	a person
+		fname
+		lname 
+		age
+		address
+		occupation
+	en employee 
+		emp_Id
+		emp name	
+		designation 
+		date of joining 
+		exp 
+
+an object is a prototype with properties and associated values
+object stores teh data in the form key value pair 
+key : value
+
+const employee = {
+	fname : "Ramlal",
+	lname : "Verma",
+	designation : "Manager"
+}
+
+How to create object?
+1. by object literal
+	object = {property1 : value1, property2 : value2,....}
+
+2. by creating an instance using new keyword
+	var objectName = new Object()
+	new keyword is used to create an object of predefined object named as Object
+
+3. using object constructor
+	create a function with arguments and assign value by using this keyword
+	this keyword always refers to there current object 
+
+	function functioname(arguments.....){
+		this.property1 = argument1
+		this.property2 = argument2
+		......
+	}
+	var object = new functioname(arguments....)
+
+
+Functions		
+Arrays
+Async functions

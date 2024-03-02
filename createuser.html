@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+             
+            function createUser(f_name,l_name){
+                this.f_name = f_name
+                this.l_name = l_name
+                display()
+            }
+            
+            function display(){
+                var user = new createUser(fname, lname)
+                document.write("<h3>User object created</h3>")
+                document.write(user.f_name)
+                document.write("<br/>")
+                document.write(user.l_name)
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <form>
+            First Name : <input type="text" id="f_name" name="fname"/><br/>
+            Last Name  : <input type="text" id="l_name" name="lname"/><br/>
+            <button type="submit" onclick="createUser(document.getElementById('f_name').value,document.getElementById('l_name').value)">Submit</button>
+        </form>
+    </body>
+</html>

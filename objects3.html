@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Object constructor</title>
+    </head>
+    <body>
+        <script>
+            function employee(empid, empname, designation){
+                this.empid = empid
+                this.empname = empname
+                this.designation = designation
+            }
+
+            var emp = new employee(10101, "Seeta", "Developer")
+            document.write("ID is : " + emp.empid+ "<br/>")
+            document.write("Name is : " + emp.empname+ "<br/>")
+            document.write("Desig is : " + emp.designation+ "<br/>")
+        </script>
+    </body>
+</html>
