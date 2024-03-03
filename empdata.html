@@ -1,0 +1,38 @@
+<html>
+<head>
+<script language="Javascript" type = "text/javascript">
+<!--
+function EmployeeObj() {
+    this.name = "";
+    this.address = "";
+    this.telephone = "";
+    this.emailaddress = "";
+}
+var newEmployee = new EmployeeObj();
+
+function createEmployee() {
+    newEmployee.name = Employeeform.name.value;
+    newEmployee.address = Employeeform.address.value;
+    newEmployee.telephone = Employeeform.phone.value;
+    newEmployee.emailaddress = Employeeform.email.value;
+    alert("Hello " + newEmployee.name);
+    alert("Your Address is " + newEmployee.address);
+    alert("Phone no  " + newEmployee.phone);
+    alert("Email is " + newEmployee.email)
+}
+//-->
+</script>
+</head>
+<body>
+<form name="Employeeform">
+  <u><b>Employee Information</b></u></p>
+  <P><b>Name:</b>
+  <input type="text" name="name" size="20"></p>
+  <P><b>Address: </b><input type="text" name="address" size="55"></p>
+  <P><b>Telephone:</b> <input type="text" name="phone" size="20"></p>
+  <P><b>Email:</b>
+  <input type="text" name="email" size="20"></p>
+  <P><input type="submit" value="Submit" OnClick="createEmployee()"></p>
+</form>
+</body>
+</html>

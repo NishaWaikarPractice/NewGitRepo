@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            //create an array
+            document.write("<h4>Array Literal</h4>")
+            let cities = ["Delhi", "Mumbai", "Bangalore", "Kolkata"]
+
+            //iterate over an array using for loop
+            for(var i=0; i<cities.length; i++){
+                document.write(cities[i] + "<br/>")
+            }
+        </script>
+        <script>
+            document.write("<h4>Array Object</h4>")
+            var colors = new Array()
+            colors[0] = "Red"
+            colors[1] = "Green"
+            colors[2] = "Blue"
+            //iterate over an array using for loop
+            for(var i=0; i<colors.length; i++){
+                document.write(colors[i] + "<br/>")
+            }
+        </script>
+
+    <script>
+        document.write("<h4>Array Constructor</h4>")
+        var techSkills = new Array("Java", "HTML", "Javascript", "Angular", "MySQL")
+    
+        //iterate over an array using for loop
+        for(var i=0; i<techSkills.length; i++){
+            document.write(techSkills[i] + "<br/>")
+        }
+    </script>
+    </body>
+</html>

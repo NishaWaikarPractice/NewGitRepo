@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script>
+            function showMsg(){
+                alert("This is function does not accept any parameters nor returns any value")
+            }
+            function calSquare(number){
+                var square = number * number
+                document.write("This is function accepts one parameter and does not return any value<br/>")
+                document.write("Square is "  + square)
+            }
+            function add(num1, num2){
+                var result = num1 + num2
+                document.write("This is function accepts 2 parameters and returns value<br/>")
+                return result;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="showMsg()" value="Click"/>
+        <input type="button" onclick="calSquare(2)" value="Square"/>
+        <script>
+            document.write(add(10,20))
+        </script>
+        <script>
+            var subtract = new Function("num1", "num2", "return num2 - num1")
+            document.write(subtract(10, 20))
+        </script>
+        <script>
+            var calcPower = new Function("num1", "num2", "document.write(Math.pow(num1,num2))")
+            calcPower(15,2)
+        </script>
+        <script>
+            document.write("<h3>Factory Function</h3>")
+            var student = {
+                studentname : "Geeta",
+                standard : 10,
+
+                getStudentInfo(){
+                    return this.studentname + " " + this.standard
+                },
+
+                getStudentObj(){
+                    return this
+                }
+            }
+            var stud = student.getStudentObj()
+            document.write(stud.studentname + "<br/>") 
+            document.write(stud.standard + "<br/>") 
+
+            document.write(student.getStudentInfo())
+        </script>
+        <script>
+            document.write("Constructor function")
+            function person(){
+                this.fname = "Reeta",
+                this.age = 30
+            }
+            var person1 = new person()
+            document.write(person1.fname)
+            document.write(person1.age)
+        </script>
+    </body>
+</html>

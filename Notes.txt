@@ -772,6 +772,49 @@ How to create object?
 	var object = new functioname(arguments....)
 
 
-Functions		
+Functions	
+	block of code with a assigned task to perform
+
+	adv :
+		code reusability
+		less coding
+
+1. by using function keyword
+	function functionName(0 to multiple arguments){
+		// code
+	}
+2. by using Function object 
+	new Function("arg1","arg2",...,"function body")	
+
+factory function
+	a function that returns a new object
+
+constructor function
+
+
 Arrays
+	an object that holds multiple same types of values
+	var name : this variable can hold only 1 value
+
+how to create an array?
+	1. array literal
+		var arrayName = [val1, val2, val3,....]
+
+	2. instance of Array
+		var arrayName = new Array()
+
+	3. using array constructor 	
+		create an array by passing parguments to Array constrcutor
+
+Hoisting 
+
+
+
+
+
+	
 Async functions
+
+Angular
+before tomorrow's session complete installation for VS code & node JS
+complete self learning videos
