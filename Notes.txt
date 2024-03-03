@@ -804,17 +804,35 @@ how to create an array?
 		var arrayName = new Array()
 
 	3. using array constructor 	
-		create an array by passing parguments to Array constrcutor
+		create an array by passing arguments to Array constrcutor
 
 Hoisting 
+	a concept that enables to extract or use the value of variable
+	before initializing without getting error
+	var is used to declare a variable
+	we initialize data members
+	var salary // declaration
+	salary = 10000 // initialization
 
+	features :
+		allows to declare all variables at the top of code, regardless their 
+		scope in the program
+		allows to call a function even before defining function
 
+	JS allocates memory for all variables & functions even before the execution	
 
-
-
-	
 Async functions
+	asynchronous programming
 
+	Async allows to write promises based code and it checks that there is no break in the 
+	execution thread
+	Async function always returns a value
+
+callback
+	a function that is passed into another function with expectation
+	that the callback will be executed at required time
+	In javascript we can pass a function as an argument to a function
+	
 Angular
 before tomorrow's session complete installation for VS code & node JS
 complete self learning videos

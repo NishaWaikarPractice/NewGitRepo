@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            //without hoisting
+            let var1  // declaration
+            var1 = 10 // initialization
+            //document.write(var1)
+
+            //hoisting
+            function hoistingCheck(){
+                a = 10
+                let b = 20 // local variable
+            }
+
+            hoistingCheck()
+            myFunction()
+            function myFunction(){
+                document.write("a is : " + a)
+                document.write("b is : " + b)
+            }
+        </script>
+    </body>
+</html>

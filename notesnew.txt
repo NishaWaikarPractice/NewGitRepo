@@ -1,0 +1,41 @@
+Install node
+to check node installation
+1. Open command prompt
+2. Navigate to c:
+3. type command as node -v
+
+to check npm installation 
+npm - node package manager
+whatever installation is required for angular projects is 
+taken care of by NPM
+1. type command npm -v
+
+Install angular
+npm install -g @angular/cli
+
+check angular version
+ng version
+
+create new angular project 
+ng new <PROJECTNAME>
+ng new NewAngularProject
+
+What is Angular?
+    open source Javascript framework that helps to create SPA (Single Page Application)
+    developed using HTML & Typescript
+
+Features :
+    1. modular : multiple angular modules are available that support reusability
+    2. component based architecture : when we need to design angular application, 
+                                      we need to create components.Component represents 
+                                      piece of UI. Also supports reusability 
+    3. templates : represents HTML template  
+    4. two-way data binding : Data flows from front end to backend      
+    5. Dependency Injection : services are created and injected into components  
+
+Angular architecture  
+    Component based architecture                
+
+Javascript - Object based scripting language - saved with .js
+Javascript + OOC = ECMA script - saved with .js 
+Javascript + OOC + Data specification = Typescript - saved with .ts        

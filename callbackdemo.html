@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <script>
+            // without callback
+            // function greet(name){
+            //     console.log("Hello " + name)
+            // }
+            // greet("John")
+
+            function greet(name, callback){
+                console.log("Hello " + name)
+                callback()
+            }
+            function callMe(){
+                console.log("I am a callback function")
+            }
+
+            // pass function as argument
+            greet("John", callMe)
+
+            function getData(name, callback){
+                console.log("This is to get data")
+                callback(name)
+            }
+            function sayHello(name){
+                console.log("Hello " + name)
+            }
+            setTimeout(getData, 5000, 'Scott', sayHello)
+
+        </script>
+    </body>
+</html>
